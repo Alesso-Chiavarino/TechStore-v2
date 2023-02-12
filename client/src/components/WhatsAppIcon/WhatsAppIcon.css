@@ -1,0 +1,25 @@
+.icono_whastapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    z-index: 999999;
+    font-size: 1.875rem;
+    background-color: #25d366;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    cursor: pointer;
+    padding-bottom: 0.3em;
+}
+
+.icono_whastapp:hover {
+    background-color: #12ec62;
+}
+
+.whatsAppIcon {
+    font-size: 1.3em;
+    color: #fff;
+}

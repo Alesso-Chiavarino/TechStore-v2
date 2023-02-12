@@ -1,0 +1,15 @@
+.active {
+    font-weight: bold;
+}
+
+.linkCategory {
+    font-size: 1.0625em;
+    font-weight: bold;
+    margin: 0 0.5em;
+    text-decoration: none;
+    color: #474747f6;
+}
+
+.linkCategory:hover {
+    color: #7c7c7cf6;
+}

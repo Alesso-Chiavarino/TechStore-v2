@@ -1,0 +1,73 @@
+.navBar {
+    z-index: 800;
+    background-color: #252525;
+}
+
+.navCategory {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #EEEEEE;
+    box-shadow: 0 0.625em 0.9375em -0.625em rgb(0 0 0 / 50%);
+}
+
+.formSearch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navSearch {
+    width: 37.5em;
+    box-shadow: none !important;
+    border: none;
+}
+
+.searchIcon {
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.25em;
+}
+
+.cartIcon {
+    text-decoration: none;
+    margin-right: 0.4375em;
+}
+
+.contSpanCategories {
+    height: 4.0625em;
+}
+
+.spanCategories {
+    cursor: pointer;
+    color: #000000;
+    font-weight: bold;
+    font-size: 1.125em;
+}
+
+.arrow {
+    font-size: 1.125em;
+}
+
+.contCategoriesList {
+    background-color: #252525;
+    border: 0.1px solid #7f7f7f7d;
+    z-index: 1545;
+    left: 18.75em;
+    width: 25em;
+    border-radius: 0 0 0.25em 0.25em;
+    position: absolute;
+}
+
+/* scrollbar */
+body::-webkit-scrollbar {
+    width: 15px;
+    background-color: #252525;
+    border-left: 0.2992px solid rgb(70, 70, 70);
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #383838;
+    border-radius: 0.625em;
+}

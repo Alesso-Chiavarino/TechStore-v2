@@ -1,0 +1,19 @@
+.counter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #777272;
+    color: #fff;
+    width: 1.25em;
+    height: 1.25em;
+    top: -1.7em;
+    right: -0.7em;
+    border-radius: 50%;
+    font-size: 0.9375em;
+    font-weight: 700;
+}
+
+.counterHide {
+    visibility: hidden;
+}

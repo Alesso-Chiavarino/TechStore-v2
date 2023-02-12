@@ -1,0 +1,62 @@
+.contCheckout {
+    display: flex;
+
+    .checkoutLeftSide {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.buyCard {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: #fff;
+    padding: 1.375em;
+    background-color: #1b1b1b;
+    border-radius: 1.25em;
+    margin-bottom: 1em;
+
+    img {
+        width: 3.375em;
+        margin-bottom: 1em;
+    }
+
+    label {
+        margin-bottom: 0.125em;
+    }
+
+    input {
+        color: #fff;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        background: none !important;
+        margin-bottom: 1em;
+        outline: none;
+    }
+
+    .leftBuyCard {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+
+        input {
+            font-size: 1em;
+        }
+
+        input:last-child {
+            width: 15%;
+        }
+    }
+
+    .rightBuyCard {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        input {
+            width: 80%;
+        }
+    }
+}

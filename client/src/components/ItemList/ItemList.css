@@ -1,0 +1,8 @@
+.contCard {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 0.625em;
+    width: 100%;
+    margin: auto;
+}

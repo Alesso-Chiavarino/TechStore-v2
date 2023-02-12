@@ -1,0 +1,60 @@
+.cartContainer {
+    min-height: 50vh;
+    margin-top: 1.25em !important;
+    border-radius: 0.3125em;
+    margin-top: 1.25em;
+    padding: 0;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.cartTitle {
+    border-radius: 0.3125em 0.3125em 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.5625em;
+    padding: 0.625em;
+    text-align: center;
+    color: #fff;
+    background-color: #252525;
+    margin-bottom: 1.5625em;
+}
+
+.cartTitle h3 {
+    font-weight: 400;
+    font-size: 1.75em;
+}
+
+.btnElimarCart {
+    font-size: 1.25em;
+    background: none;
+    border: 0;
+}
+
+.btnElimarCart:hover {
+    color: rgb(29, 29, 29)
+}
+
+.contCartEmpty {
+    gap: 6.25em;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 37.5em;
+}
+
+.cartMessage {
+    font-weight: bold;
+    font-size: 2.1875em;
+}
+
+.cartMessage2 {
+    font-size: 1.25em;
+    margin: 1.25em 0;
+}
+
+.imgErorCart {
+    width: 31.25em;
+    height: 31.25em;
+}

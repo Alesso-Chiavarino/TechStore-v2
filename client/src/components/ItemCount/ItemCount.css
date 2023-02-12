@@ -1,0 +1,49 @@
+.contIC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.8125em;
+    width: 5.625em;
+    max-width: 50%;
+    float: left;
+    padding-right: 0.4688em;
+    border: 1px solid #2020209c;
+    border-radius: 0.3125em;
+    width: 150px;
+}
+
+.counterIC {
+    font-size: 1.25em;
+}
+
+.leftSideCounterIC {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightSideCounterIC {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnIC {
+    background-color: transparent;
+    border: none;
+}
+
+.arrowIC {
+    color: #202020;
+}
+
+.btnIC:disabled {
+    opacity: 0.3;
+}
+
+.btnAddToCart {
+    width: 50%;
+    margin-bottom: 30px;
+    margin: 0 50px;
+}

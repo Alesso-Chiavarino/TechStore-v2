@@ -1,0 +1,47 @@
+.contProdCart {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0.625em;
+}
+
+.contProdLeftCart,
+.contProdCenterCart,
+.contProdRightCart,
+.contProdCenter2Cart,
+.contProdCenter3Cart {
+    font-weight: bold;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+
+.contProdCenterCart h3 {
+    font-size: 1.25em;
+}
+
+.contProdCenter2Cart {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+}
+
+.availabilitySpan {
+    text-align: center;
+    width: 100%;
+    margin: 0.3125em 0 0 -1.875em;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 0.8125em;
+    font-weight: normal;
+    color: #5a5a5a;
+}
+
+.imgProdCart {
+    padding: 0.625em;
+    border-radius: 0.3125em;
+    border: 0.1008px solid #7f7f7f49;
+    width: 7.5em;
+    height: 7.5em;
+}

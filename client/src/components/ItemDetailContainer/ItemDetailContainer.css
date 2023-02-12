@@ -1,0 +1,12 @@
+.details {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12.5em;
+    z-index: -5045;
+}
+
+.contItemDetail {
+    margin-top: -9.375em;
+}

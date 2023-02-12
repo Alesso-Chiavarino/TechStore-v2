@@ -1,0 +1,299 @@
+// ----------  RESPONSIVE  ---------- //
+
+@media screen and (max-width: 450px) {
+
+    //inicio
+    body {
+        font-size: 10px !important;
+    }
+
+    .navSearch {
+        max-width: 10em !important;
+
+        &::placeholder {
+            font-size: 13px;
+        }
+    }
+
+    .carousel-item {
+        img {
+            max-height: 250px;
+        }
+    }
+
+    .react-multi-carousel-item {
+        display: flex;
+        justify-content: center;
+
+        .card {
+            margin-right: 5em !important;
+        }
+    }
+
+    //footer
+    .contMenuLink {
+        flex-wrap: wrap;
+
+        li {
+            margin: 5px 5px 5px 0;
+        }
+    }
+
+    .footer {
+        .contIcono {
+            margin-bottom: 30px;
+        }
+    }
+
+    //detail
+    .details {
+        display: block;
+    }
+
+    //cart
+    .contCartEmpty {
+        gap: 1em;
+
+        .imgErorCart {
+            width: 15em !important;
+        }
+    }
+
+    .contProdLeftCart {
+        margin-right: 20px;
+    }
+
+    //checkout 
+    .leftBuyCard {
+        min-width: 40% !important;
+    }
+
+    .rightBuyCard {
+        min-width: 20% !important;
+    }
+
+    //eror404
+    .contTextEror {
+        font-size: 10px;
+        width: 50% !important;
+
+        // a {
+        //     width: 200px !important;
+        // }
+    }
+
+    .imgEror {
+        width: 15em !important;
+        height: 15em !important;
+    }
+
+    ;
+
+}
+
+// `sm` applies to x-small devices (portrait phones, less than 576px)
+@media screen and (max-width: 576px) {
+
+    //inicio
+    .ulMenuCategories {
+        display: none !important;
+    }
+
+    .navSearch {
+        max-width: 15em;
+    }
+
+    .contCategoriesList {
+        width: 100%;
+
+        .contSubcategory {
+            width: 100% !important;
+            left: 0;
+            right: 0;
+        }
+    }
+
+    //checkout
+    .leftBuyCard {
+        min-width: 35%;
+    }
+
+    //cart
+    .cartContainer {
+        ul {
+            padding: 0;
+        }
+    }
+}
+
+// `md` applies to small devices (landscape phones, less than 768px) aprobado!
+@media screen and (max-width: 768px) {
+
+    // Inicio //
+    body {
+        font-size: 12px;
+    }
+
+    .navSearch {
+        width: 20em !important;
+    }
+
+    .navCategory {
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .contSubcategory {
+        width: 80% !important;
+    }
+
+    .carousel-item {
+        img {
+            height: 300px !important;
+        }
+    }
+
+    //detail
+    .topSide {
+        flex-direction: column;
+    }
+
+    .rightSide {
+        width: 100%;
+    }
+
+    .leftSide {
+        width: 100%;
+    }
+
+    .contProdCenterCart {
+        h3 {
+            font-size: 1em;
+        }
+    }
+
+    //cart
+    .imgErorCart {
+        width: 20em;
+        height: 20em;
+    }
+
+    //eror404
+    .contTextEror {
+        width: 50% !important;
+
+        a {
+            width: 200px !important;
+        }
+    }
+
+    .imgEror {
+        width: 20em;
+        height: 20em
+    }
+
+    //checkout
+    .contCheckout {
+        flex-direction: column;
+
+        .checkoutLeftSide,
+        .checkoutRightSide {
+            width: 100% !important;
+        }
+
+        .leftBuyCard {
+            width: 30% !important;
+        }
+
+        .rightBuyCard {
+            width: 15% !important;
+        }
+    }
+}
+
+// `lg` applies to medium devices (tablets, less than 992px) aprobado!
+@media screen and (max-width: 992px) {
+
+    // Inicio //
+    body {
+        font-size: 12px !important;
+    }
+
+    .navSearch {
+        width: 27em;
+    }
+
+    .contCategoriesList {
+        left: 0em !important;
+    }
+
+    //checkout
+    .leftBuyCard {
+        width: 50% !important;
+    }
+
+    //cart 
+    .contProdCenter3Cart {
+        width: 10%;
+    }
+
+    .cartTitle {
+        border-radius: 0;
+    }
+
+    .contProdRightCart {
+        width: 10%;
+    }
+
+    .contProdCenter2Cart {
+        width: 25%;
+
+        .contIC {
+            gap: 0.5em !important;
+        }
+    }
+}
+
+// `xl` applies to large devices (desktops, less than 1200px) aprobado!
+@media screen and (max-width: 1200px) {
+
+    // Inicio //
+    body {
+        font-size: 10px;
+    }
+
+    //detail
+    .btnBuyID {
+        margin: 0;
+        width: 100%;
+    }
+
+    //itemCount
+    .btnAddToCart {
+        margin: 20px 0 0 0;
+        width: 100%;
+    }
+
+    //checkout
+    .inputCvc {
+        width: 20% !important;
+    }
+
+    //cart 
+    .contProdCenter2Cart {
+        .contIC {
+            gap: 1em;
+        }
+    }
+}
+
+// `xxl` applies to x-large devices (large desktops, less than 1400px) aprobado!
+@media screen and (max-width: 1400px) {
+    body {
+        font-size: 14px;
+    }
+
+    .contCategoriesList {
+        left: 10em;
+    }
+}

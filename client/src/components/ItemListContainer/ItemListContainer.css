@@ -1,0 +1,24 @@
+.contCategoryName {
+    display: flex;
+    justify-content: center;
+    background-image: url('/public/img/bg3.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 1.875em 0;
+}
+
+.categoryName {
+    color: #fff;
+    font-style: italic;
+    letter-spacing: 0.02em;
+    font-weight: bold;
+}
+
+.spanDivider {
+    font-size: 1.5625em;
+}
+
+.dividerAngle {
+    font-size: 1.5625em;
+}
