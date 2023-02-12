@@ -4,7 +4,7 @@ import { config } from 'dotenv'
 config();
 
 mercadopago.configure({
-    access_token: process.env.MERCADOPAGO_ACCESS_TOKEN
+    access_token: process.env.MERCADOPAGO_ACCESS_TOKEN_TEST
 })
 
 
@@ -15,7 +15,7 @@ export const checkout = async (req, res) => {
     var preference = {
         items: products,
         back_urls: {
-            success: 'http://localhost:3000',
+            success: 'https://tttechstore.vercel.app',
             failure: '',
             pending: '',
         },
