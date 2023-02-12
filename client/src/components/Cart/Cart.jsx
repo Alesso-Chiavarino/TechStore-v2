@@ -23,7 +23,7 @@ const Cart = () => {
         picture_url: prod.image,
       }
     })
-    const response = await axios.post('http://localhost:4000/api/checkout', newCart)
+    const response = await axios.post('https://tech-store-v2.vercel.app/api/checkout', newCart);
     window.location.href = response.data
   }
 
@@ -51,10 +51,7 @@ const Cart = () => {
       <span className='my-3 fw-bold mx-5'>Precio Total: ${totalPrice()}</span>
       <div className='d-flex justify-content-between mb-4'>
         <button className='btn btn-danger w-25 mx-5' onClick={deleteAllToCart} >Eliminar todo</button>
-        <button onClick={() => {
-          // window.scroll(0, 0);
-          goToChekout()
-        }} className='btn btn-success w-25 mx-5'>Checkout</button>
+        <button onClick={goToChekout} className='btn btn-success w-25 mx-5'>Checkout</button>
         {/* <Link onClick={() => window.scroll(0, 0)} to={'/checkout'} className='btn btn-success w-25 mx-5'>Checkout</Link> */}
       </div>
     </section>
