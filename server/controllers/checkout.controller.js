@@ -4,7 +4,7 @@ import { config } from 'dotenv'
 config();
 
 mercadopago.configure({
-    access_token: process.env.MERCADOPAGO_ACCESS_TOKEN_TEST
+    access_token: process.env.MERCADOPAGO_ACCESS_TOKEN
 })
 
 
