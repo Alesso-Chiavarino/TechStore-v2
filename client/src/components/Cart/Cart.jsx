@@ -23,6 +23,7 @@ const Cart = () => {
         picture_url: prod.image,
       }
     })
+    // const response = await axios.post('http://localhost:4000/api/checkout', newCart);
     const response = await axios.post('https://tech-store-v2.vercel.app/api/checkout', newCart);
     window.location.href = response.data
   }

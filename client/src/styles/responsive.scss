@@ -25,9 +25,9 @@
         display: flex;
         justify-content: center;
 
-        .card {
-            margin-right: 5em !important;
-        }
+        // .card {
+        //     margin-right: 5em !important;
+        // }
     }
 
     //footer
@@ -124,6 +124,13 @@
             padding: 0;
         }
     }
+
+    //prodContainer
+    .mb-5 {
+        .contCard {
+            grid-template-columns: repeat(2, 1fr) !important;
+        }
+    }
 }
 
 // `md` applies to small devices (landscape phones, less than 768px) aprobado!
@@ -209,6 +216,11 @@
             width: 15% !important;
         }
     }
+
+    //prodContainer
+    .contCard {
+        grid-template-columns: repeat(3, 1fr) !important;
+    }
 }
 
 // `lg` applies to medium devices (tablets, less than 992px) aprobado!
@@ -260,6 +272,11 @@
     // Inicio //
     body {
         font-size: 10px;
+    }
+
+    //prodContainer
+    .contCard {
+        grid-template-columns: repeat(4, 1fr);
     }
 
     //detail

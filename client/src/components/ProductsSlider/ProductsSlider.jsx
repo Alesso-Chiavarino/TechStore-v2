@@ -12,21 +12,21 @@ const ProductsSlider = ({ beg, fin }) => {
 
         superLargeDesktop: {
             breakpoint: { max: 3000, min: 1199 },
-            items: 4
+            items: 5
         },
         desktop: {
-            breakpoint: { max: 1199, min: 768 },
-            items: 3,
+            breakpoint: { max: 1199, min: 992 },
+            items: 4,
             slidesToSlide: 1
         },
         tablet: {
-            breakpoint: { max: 768, min: 450 },
+            breakpoint: { max: 992, min: 450 },
             items: 2,
             slidesToSlide: 2
         },
         mobile: {
             breakpoint: { max: 450, min: 0 },
-            items: 1,
+            items: 2,
             slidesToSlide: 1,
         }
     };

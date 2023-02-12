@@ -1,8 +1,10 @@
 .contCard {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    /* grid, and divide in 4 columns */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1em;
     margin-top: 0.625em;
+    /* margin-bottom: 0.625em; !    */
     width: 100%;
-    margin: auto;
+    margin: 0 auto;
 }
