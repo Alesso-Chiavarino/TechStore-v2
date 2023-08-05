@@ -1,10 +1,10 @@
-import { collection, getDocs, query, queryEqual, where } from 'firebase/firestore'
+import { collection, getDocs, query, where } from 'firebase/firestore'
 import { db } from './firebaseConfig';
 
 const collectionProd = collection(db, 'products');
 
 export class ProductsService {
-    async getProducts(ref) {
+    async getProducts() {
         try {
             const querySnapshot = await getDocs(collectionProd);
             const products = querySnapshot.docs.map(prod => {
