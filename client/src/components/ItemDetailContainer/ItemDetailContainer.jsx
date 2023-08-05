@@ -22,7 +22,7 @@ const ItemDetailContainer = () => {
         }
         setProduct(filteredProduct)
       })
-      .catch(eror => console.log(eror))
+      .catch(error => console.log(error))
       .finally(() => setLoading(false))
   }, [itemId])
 

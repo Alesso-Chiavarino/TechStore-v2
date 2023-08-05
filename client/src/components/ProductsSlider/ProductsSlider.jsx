@@ -2,9 +2,7 @@ import './ProductsSlider.css'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import Item from "../Item/Item";
-import { useState, useEffect } from 'react';
-import { collection, getDocs, where, query } from 'firebase/firestore'
-import { db } from '../../services/firebaseConfig';
+import { useProductsSlider } from './useProductsSlider';
 
 const ProductsSlider = ({ beg, fin }) => {
 
@@ -31,23 +29,7 @@ const ProductsSlider = ({ beg, fin }) => {
         }
     };
 
-    const [prodsShow, setProdsShow] = useState([])
-
-    useEffect(() => {
-
-        const prodsCollection = collection(db, 'products')
-        const ref = query(prodsCollection, where('order', '>=', beg), where('order', '<=', fin))
-        getDocs(ref)
-            .then(res => {
-                const products = res.docs.map(prod => {
-                    return {
-                        id: prod.id, ...prod.data()
-                    }
-                })
-                setProdsShow(products)
-            })
-            .catch(eror => console.log(eror))
-    }, [beg, fin])
+    const { prodsShow } = useProductsSlider(beg, fin)
 
     return (
         <div className="container">
