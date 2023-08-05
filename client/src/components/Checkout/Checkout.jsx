@@ -1,7 +1,7 @@
 import { useContext, useState, useRef } from 'react'
 import { CartContext } from '../../context/CartContext'
 import './Checkout.scss'
-import { db } from '../../services/firebaseConfig'
+import { db } from '../../config/firebase.config'
 import { addDoc, collection, serverTimestamp, getDocs, query, where, documentId, writeBatch } from 'firebase/firestore'
 import Loader from '../Loader/Loader'
 import ProductsCheckout from '../ProductsCheckout/ProductsCheckout'

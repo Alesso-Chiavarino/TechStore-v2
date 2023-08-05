@@ -1,30 +1,11 @@
-import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import './ItemDetailContainer.css'
 import Loader from "../Loader/Loader";
-import { useParams } from "react-router-dom";
-import { collection, doc, getDoc } from "firebase/firestore";
-import { db } from "../../services/firebaseConfig";
+import { useItemDetailContainer } from "./useItemDetailContainer";
 
 const ItemDetailContainer = () => {
 
-  const [product, setProduct] = useState([])
-  const [loading, setLoading] = useState(true)
-  const { itemId } = useParams()
-
-  useEffect(() => {
-    const collectionProd = collection(db, 'products')
-    const ref = doc(collectionProd, itemId)
-    getDoc(ref)
-      .then(res => {
-        const filteredProduct = {
-          id: res.id, ...res.data()
-        }
-        setProduct(filteredProduct)
-      })
-      .catch(error => console.log(error))
-      .finally(() => setLoading(false))
-  }, [itemId])
+  const { loading, product } = useItemDetailContainer()
 
   if (loading) {
     return <Loader />;

@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useContext, useReducer } from "react";
 
 export const CartContext = createContext();
 
@@ -6,41 +6,107 @@ export const useCart = () => useContext(CartContext)
 
 const CartProvider = ({ children }) => {
 
-    const [cart, setCart] = useState([])
+    const isInCart = (id, cart) => {
+        if (cart) {
+            return cart.some(prod => prod.id === id)
+        }
+    }
+
+    const cartReducer = (state, action) => {
+        switch (action.type) {
+            case 'ADD_TO_CART': {
+                const { amount, item } = action.payload
+                const product = { quantity: amount, ...item }
+
+                if (isInCart(product.id, state)) {
+                    addAmount(product)
+                } else {
+                    return [...state, product]
+                }
+                return product
+            }
+
+            case 'DELETE_TO_CART': {
+                const { id } = action.payload
+                const filteredProds = state.filter(prod => prod.id !== id)
+                return filteredProds
+            }
+
+            case 'DELETE_ALL_TO_CART': {
+                return []
+            }
+
+            case 'ADD_AMOUNT': {
+                const { product } = action.payload
+
+                const uptdatedCart = state.map(prodInCart => {
+                    if (prodInCart.id === product.id) {
+                        const updatedProduct = {
+                            ...prodInCart,
+                            quantity: product.quantity
+                        }
+                        return updatedProduct;
+                    } else {
+                        return prodInCart;
+                    }
+                })
+                return uptdatedCart
+            }
+
+            case 'SUBTRACT_QUANTITY': {
+
+                const { id } = action.payload
+
+                const updatedCart = state.map(prod => {
+                    if ((prod.id === id && prod.quantity > 1)) {
+                        const updatedProduct = {
+                            ...prod, quantity: prod.quantity - 1
+                        }
+                        return updatedProduct;
+                    } else {
+                        return prod;
+                    }
+                })
+                return updatedCart
+            }
+
+            case 'ADD_QUANTITY': {
+
+                const { id } = action.payload
+
+                const updatedCart = state.map(prod => {
+                    if ((prod.id === id && prod.quantity < prod.stock)) {
+                        const updatedProduct = {
+                            ...prod, quantity: prod.quantity + 1
+                        }
+                        return updatedProduct;
+                    } else {
+                        return prod;
+                    }
+                })
+                return updatedCart
+            }
+
+            default: return state
+        }
+    }
+
+    const [cart, dispatch] = useReducer(cartReducer, [])
 
     const addToCart = (amount, item) => {
-        const product = { quantity: amount, ...item }
-
-        if (isInCart(product.id)) {
-            addAmount(product)
-        } else {
-            setCart([...cart, product])
-        }
-
+        dispatch({ type: 'ADD_TO_CART', payload: { amount, item } })
     }
 
     const deleteToCart = (id) => {
-        const filteredProds = cart.filter(prod => prod.id !== id)
-        setCart(filteredProds)
+        dispatch({ type: 'DELETE_TO_CART', payload: { id } })
     }
 
-    const deleteAllToCart = () => setCart([])
-
-    const isInCart = id => cart.some(prod => prod.id === id)
+    const deleteAllToCart = () => {
+        dispatch({ type: 'DELETE_ALL_TO_CART' })
+    }
 
     const addAmount = (prod) => {
-        const uptdatedCart = cart.map(prodInCart => {
-            if (prodInCart.id === prod.id) {
-                const updatedProduct = {
-                    ...prodInCart,
-                    quantity: prod.quantity
-                }
-                return updatedProduct;
-            } else {
-                return prodInCart;
-            }
-        })
-        setCart(uptdatedCart)
+        dispatch({ type: 'ADD_AMOUNT', payload: { prod } })
     }
 
     const cartItemCounter = () => {
@@ -56,31 +122,11 @@ const CartProvider = ({ children }) => {
     }
 
     const subtractQuantity = (id) => {
-        const updatedCart = cart.map(prod => {
-            if ((prod.id === id && prod.quantity > 1)) {
-                const updatedProduct = {
-                    ...prod, quantity: prod.quantity - 1
-                }
-                return updatedProduct;
-            } else {
-                return prod;
-            }
-        })
-        setCart(updatedCart)
+        dispatch({ type: 'SUBTRACT_QUANTITY', payload: { id } })
     }
 
     const addQuantity = (id) => {
-        const updatedCart = cart.map(prod => {
-            if ((prod.id === id && prod.quantity < prod.stock)) {
-                const updatedProduct = {
-                    ...prod, quantity: prod.quantity + 1
-                }
-                return updatedProduct;
-            } else {
-                return prod;
-            }
-        })
-        setCart(updatedCart)
+        dispatch({ type: 'ADD_QUANTITY', payload: { id } })
     }
 
     const getProductQuantity = (id) => {

@@ -1,5 +1,5 @@
-import { collection, getDocs, query, where } from 'firebase/firestore'
-import { db } from './firebaseConfig';
+import { collection, getDocs, getDoc, doc, query, where } from 'firebase/firestore'
+import { db } from '../config/firebase.config';
 
 const collectionProd = collection(db, 'products');
 
@@ -18,6 +18,20 @@ export class ProductsService {
             console.log(err)
         }
     }
+
+    async getProductById(id) {
+        try {
+            const ref = doc(collectionProd, id)
+            const querySnapshot = await getDoc(ref)
+            const filteredProduct = {
+                id: querySnapshot.id, ...querySnapshot.data()
+            }
+            return filteredProduct
+        } catch (err) {
+            throw new Error('Error getting product', err)
+        }
+    }
+
     async getProductByCategoryName(categoryName) {
         const ref = categoryName ? query(collectionProd, where('category', '==', categoryName)) : collectionProd;
 
