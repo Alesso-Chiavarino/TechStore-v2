@@ -2,13 +2,15 @@ import { useContext } from 'react';
 import { CartContext } from '../../context/CartContext';
 import './Counter.css'
 
-const Counter = ({ value }) => {
+const Counter = () => {
 
-    const { cart } = useContext(CartContext);
+    const { cart, cartItemCounter } = useContext(CartContext);
+
+    const counterValue = cartItemCounter();
 
     return (
         <>
-            {cart.length === 0 ? <span className="counter counterHide" > {value} </span> : <span className="counter" > {value} </span>}
+            {cartItemCounter > 0 ? <span className="counter counterHide" > {counterValue} </span> : <span className="counter" > {counterValue} </span>}
         </>
     )
 }
